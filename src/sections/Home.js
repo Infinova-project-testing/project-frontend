@@ -6,7 +6,7 @@ const Home = ({ showSection }) => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Infinova</h1>
+          <h1>Infinova Global</h1>
           <p>Innovation Beyond Limits</p>
           <button className="cta-button" onClick={() => showSection('about')}>
             Explore Our Services

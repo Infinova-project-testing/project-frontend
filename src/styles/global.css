@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: popins, sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
   overflow-x: hidden;
@@ -160,7 +160,7 @@ body {
   display: inline-block;
   padding: 15px 40px;
   background: white;
-  color: var(--blue-dark);
+  color: #3B38A0;/* var(--blue-dark)*/
   text-decoration: none;
   border-radius: 50px;
   font-weight: bold;
@@ -256,7 +256,7 @@ body {
 .card-button {
   display: block;
   text-align: center;
-  background: var(--gradient);
+  background: #F97A00;/* var(--gradient) */
   color: white;
   padding: 12px 25px;
   border-radius: 25px;
