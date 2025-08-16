@@ -32,7 +32,7 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
         </div>
         <div className="cards-grid">
           <div className="card">
-            <div className="card-icon">💻</div>
+            <div className="card-icon"><img src="./src/assets/image/technical_course.png" alt="" width={90} /></div>
             <h3>Technical Courses</h3>
             <p>Comprehensive programming, web development, and software engineering courses.</p>
             <a 
@@ -44,7 +44,7 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
             </a>
           </div>
           <div className="card">
-            <div className="card-icon">📈</div>
+            <div className="card-icon"><img src="./src/assets/image/business_skills.png" alt="" width={90} /></div>
             <h3>Business Skills</h3>
             <p>Management, marketing, and entrepreneurship courses for career advancement.</p>
             <a 
@@ -56,7 +56,7 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
             </a>
           </div>
           <div className="card">
-            <div className="card-icon">🎨</div>
+            <div className="card-icon"><img src="./src/assets/image/creative_design.png" alt="" width={90} /></div>
             <h3>Creative Design</h3>
             <p>Graphic design, UI/UX, and digital marketing courses for creative professionals.</p>
             <a 

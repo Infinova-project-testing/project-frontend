@@ -6,30 +6,34 @@ const About = ({ showSection }) => {
       <div className="container">
         <h2 className="section-title">Our Divisions</h2>
         <div className="cards-grid">
+
           <div className="card">
-            <div className="card-icon">🚀</div>
-            <h3>Infinova Technologies</h3>
-            <p>Cutting-edge technology solutions including 3D printing and emerging technologies for the future.</p>
-            <button className="card-button" onClick={() => showSection('technologies')}>
-              Explore Technologies
-            </button>
-          </div>
-          <div className="card">
-            <div className="card-icon">📚</div>
+            <div className="card-icon"><img src="./src/assets/image/edu.png" alt="" width={90} /></div>
             <h3>Infinova Eduventures</h3>
             <p>Comprehensive educational programs, courses, internships, and career opportunities.</p>
             <button className="card-button" onClick={() => showSection('eduventures')}>
               Discover Courses
             </button>
           </div>
+
           <div className="card">
-            <div className="card-icon">💼</div>
+            <div className="card-icon"><img src="./src/assets/image/const.png" alt="" width={90} /></div>
             <h3>Infinova Consultants</h3>
             <p>Professional consulting services, corporate training, and comprehensive hiring solutions.</p>
             <button className="card-button" onClick={() => showSection('consultants')}>
               View Services
             </button>
           </div>
+
+          <div className="card">
+            <div className="card-icon"><img src="./src/assets/image/tech.png" alt="" width={90} /></div>
+            <h3>Infinova Technologies</h3>
+            <p>Cutting-edge technology solutions including 3D printing and emerging technologies for the future.</p>
+            <button className="card-button" onClick={() => showSection('technologies')}>
+              Explore Technologies
+            </button>
+          </div>
+        
         </div>
       </div>
     </section>

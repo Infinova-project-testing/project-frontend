@@ -138,7 +138,7 @@ const BrochureForm = ({ selectedCourse, showSection, generatedOTP, setGeneratedO
           
           {showOTPSection && (
             <div id="otp-section">
-              <h3 className="text-center mb-20">Enter OTP</h3>
+              <h3 className="text-center mb-20 mt-20">Enter OTP</h3>
               <div className="otp-container">
                 {otpValues.map((value, index) => (
                   <input

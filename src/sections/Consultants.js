@@ -7,7 +7,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
         <h2 className="section-title">Infinova Consultants</h2>
         <div className="cards-grid">
           <div className="card">
-            <div className="card-icon">🏢</div>
+            <div className="card-icon"><img src="./src/assets/image/corporate.png" alt="" width={90} /></div>
             <h3>Corporate Training</h3>
             <p>Customized training programs for organizations to upskill their workforce in latest technologies.</p>
             <a 
@@ -19,7 +19,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
             </a>
           </div>
           <div className="card">
-            <div className="card-icon">🏕️</div>
+            <div className="card-icon"><img src="./src/assets/image/outbound.png" alt="" width={90} /></div>
             <h3>Outbound Training</h3>
             <p>Team building activities, leadership development, and outdoor training programs.</p>
             <a 
@@ -31,7 +31,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
             </a>
           </div>
           <div className="card">
-            <div className="card-icon">👥</div>
+            <div className="card-icon"><img src="./src/assets/image/hiring.png" alt="" width={90} /></div>
             <h3>Hiring Solutions</h3>
             <p>End-to-end recruitment services to help organizations find the right talent efficiently.</p>
             <a 
