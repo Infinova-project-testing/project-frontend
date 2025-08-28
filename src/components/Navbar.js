@@ -34,7 +34,7 @@ const Navbar = ({ currentSection, showSection }) => {
         <div className="logo" onClick={() => handleNavClick('home')}>
           InfinovaGlobal
         </div>
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}` }>
           <li><a onClick={() => handleNavClick('home')}>Home</a></li>
           <li><a onClick={() => handleNavClick('eduventures')}>Eduventures</a></li>
           <li><a onClick={() => handleNavClick('consultants')}>Consultants</a></li>

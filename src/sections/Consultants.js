@@ -14,8 +14,9 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               href="#" 
               className="card-button" 
               onClick={(e) => {e.preventDefault(); showBrochureForm('corporate');}}
+              style={{cursor:"not-allowed"}}
             >
-              Get Brochure
+              Coming Soon!!
             </a>
           </div>
           <div className="card">
@@ -26,8 +27,9 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               href="#" 
               className="card-button" 
               onClick={(e) => {e.preventDefault(); showBrochureForm('outbound');}}
+              style={{cursor:"not-allowed"}}
             >
-              Get Brochure
+              Coming Soon!!
             </a>
           </div>
           <div className="card">
@@ -38,8 +40,9 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               href="#" 
               className="card-button" 
               onClick={(e) => {e.preventDefault(); showSection('hiring-solutions');}}
+              style={{cursor:"not-allowed"}}
             >
-              Explore Solutions
+              Coming Soon!!
             </a>
           </div>
         </div>
@@ -52,9 +55,10 @@ const Consultants = ({ showSection, showBrochureForm }) => {
             <a 
               href="#" 
               className="card-button" 
-              onClick={(e) => {e.preventDefault(); showBrochureForm('leadership');}}
+             onClick={(e) => {e.preventDefault(); showBrochureForm('leadership');}}
+             style={{cursor:"not-allowed"}}
             >
-              Get Details
+              Coming Soon!!
             </a>
           </div>
           <div className="card">
@@ -64,8 +68,9 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               href="#" 
               className="card-button" 
               onClick={(e) => {e.preventDefault(); showBrochureForm('digital-transform');}}
+              style={{cursor:"not-allowed"}}
             >
-              Get Details
+              Coming Soon!!
             </a>
           </div>
           <div className="card">
@@ -75,8 +80,9 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               href="#" 
               className="card-button" 
               onClick={(e) => {e.preventDefault(); showBrochureForm('communication');}}
+              style={{cursor:"not-allowed"}}
             >
-              Get Details
+              Coming Soon!!
             </a>
           </div>
         </div>

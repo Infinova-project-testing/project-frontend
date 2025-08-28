@@ -71,6 +71,7 @@ body {
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .nav-menu li a:hover,
@@ -380,6 +381,7 @@ body {
 .footer-section h1 {
   margin-bottom: 20px;
   color: var(--primary-cyan);
+  cursor: pointer;
 }
 
 .footer-section ul {
@@ -398,6 +400,7 @@ body {
 
 .footer-section ul li a:hover {
   color: var(--primary-cyan);
+  cursor: pointer;
 }
 
 .footer-section.right-align img {
@@ -1013,4 +1016,7 @@ body {
     padding: 10px 25px;
     font-size: 13px;
   }
+}
+.card{
+  cursor: pointer;
 }

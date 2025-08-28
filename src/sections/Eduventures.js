@@ -1,6 +1,27 @@
 import React from 'react';
-
+import { useState,useEffect } from 'react';
+import axios from 'axios';
 const Eduventures = ({ showSection, showBrochureForm }) => {
+  const[loading,setLoading]=useState(true);
+  const[courses,setCourses]=useState([]);
+  const[error,setError]=useState('');
+  useEffect(()=>{
+    const fetchCourses=async()=>{
+      try {
+        const res=await axios.get(import.meta.env.VITE_BACKEND_NEW_COURSES);
+        if(res.data.length===0){
+          setError("No courses avaliable at the moment!")
+        }else{
+          setCourses(res.data);
+        }
+      } catch (error) {
+        setError("Something went wrong")
+      }finally{
+        setLoading(false)
+      }
+    }
+    fetchCourses();
+  },[])
   return (
     <section className="section active">
       <div className="container">
@@ -30,43 +51,26 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
             Explore Jobs
           </a>
         </div>
-        <div className="cards-grid">
-          <div className="card">
-            <div className="card-icon"><img src="./src/assets/image/technical_course.png" alt="" width={90} /></div>
-            <h3>Technical Courses</h3>
-            <p>Comprehensive programming, web development, and software engineering courses.</p>
+        <div className="cards-grid" style={{display:"flex",justifyContent:"center"}}>
+         {
+          loading?(<p>Loading courses</p>):error?(<p>{error.message}</p>):(
+             courses.map((data)=>(
+              <div className="card" style={{maxWidth:"25rem"}}>
+            <div className="card-icon"><img src={data.courseImageUrl} alt="" width={90} /></div>
+            <h3>{data.name}</h3>
+            <p>{data.details}</p>
             <a 
               href="#" 
               className="card-button" 
-              onClick={(e) => {e.preventDefault(); showBrochureForm('technical');}}
+              onClick={(e) => {e.preventDefault(); showBrochureForm(data);}}
             >
               Get Brochure
             </a>
           </div>
-          <div className="card">
-            <div className="card-icon"><img src="./src/assets/image/business_skills.png" alt="" width={90} /></div>
-            <h3>Business Skills</h3>
-            <p>Management, marketing, and entrepreneurship courses for career advancement.</p>
-            <a 
-              href="#" 
-              className="card-button" 
-              onClick={(e) => {e.preventDefault(); showBrochureForm('business');}}
-            >
-              Get Brochure
-            </a>
-          </div>
-          <div className="card">
-            <div className="card-icon"><img src="./src/assets/image/creative_design.png" alt="" width={90} /></div>
-            <h3>Creative Design</h3>
-            <p>Graphic design, UI/UX, and digital marketing courses for creative professionals.</p>
-            <a 
-              href="#" 
-              className="card-button" 
-              onClick={(e) => {e.preventDefault(); showBrochureForm('design');}}
-            >
-              Get Brochure
-            </a>
-          </div>
+             ))
+          
+          )
+         }
         </div>
       </div>
     </section>

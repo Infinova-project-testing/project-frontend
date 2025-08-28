@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Home = ({ showSection }) => {
+  
   return (
     <>
       {/* Hero Section */}

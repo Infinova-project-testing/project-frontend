@@ -19,12 +19,25 @@ const Contact = () => {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+    
+
+    
+  };
+  const sendMail=async()=>{
+    try {
+      if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       alert('Please fill all required fields');
       return;
     }
-
-    alert('Thank you for your message! We will get back to you within 24 hours.');
+      const res=await fetch(import.meta.env.VITE_BACKEND_CONTACT_FORM,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(formData)
+      });
+      
+      
+      if(res.ok){
+          alert('Thank you for your message! We will get back to you within 24 hours.');
     
     // Reset form
     setFormData({
@@ -33,8 +46,11 @@ const Contact = () => {
       subject: '',
       message: ''
     });
-  };
-
+      }
+    } catch (error) {
+      alert("Something went wrong. Try again!!");
+    }
+  }
   return (
     <section className="section active">
       <div className="container">
@@ -91,7 +107,7 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="submit-button">Send Message</button>
+              <button type="submit" className="submit-button" onClick={sendMail}>Send Message</button>
             </form>
           </div>
         </div>

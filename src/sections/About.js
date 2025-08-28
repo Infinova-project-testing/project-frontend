@@ -29,8 +29,8 @@ const About = ({ showSection }) => {
             <div className="card-icon"><img src="./src/assets/image/tech.png" alt="" width={90} /></div>
             <h3>Infinova Technologies</h3>
             <p>Cutting-edge technology solutions including 3D printing and emerging technologies for the future.</p>
-            <button className="card-button" onClick={() => showSection('technologies')}>
-              Explore Technologies
+            <button disabled className="card-button" onClick={() => showSection('technologies')}>
+             Coming Soon!!
             </button>
           </div>
         

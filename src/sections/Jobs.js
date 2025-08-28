@@ -1,37 +1,30 @@
-import React, { useState } from 'react';
-
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 const Jobs = ({ showSection }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  
-  const jobs = [
-    {
-      id: 'senior-fullstack',
-      title: 'Senior Full Stack Developer',
-      type: 'Full-time',
-      experience: '3-5 years',
-      salary: '₹8-12 LPA',
-      location: 'Bangalore',
-      description: 'Lead development of web applications using MERN stack. Mentor junior developers and drive technical decisions.'
-    },
-    {
-      id: 'data-scientist',
-      title: 'Data Scientist',
-      type: 'Full-time',
-      experience: '2-4 years',
-      salary: '₹10-15 LPA',
-      location: 'Hyderabad',
-      description: 'Build machine learning models and analyze complex datasets to drive business insights and decisions.'
-    },
-    {
-      id: 'marketing-manager',
-      title: 'Digital Marketing Manager',
-      type: 'Full-time',
-      experience: '4-6 years',
-      salary: '₹6-10 LPA',
-      location: 'Delhi',
-      description: 'Lead digital marketing strategies, manage campaigns, and drive brand growth across multiple channels.'
+  const[jobs,setJobs]=useState([]);
+  const[error,setError]=useState('');
+  const[loading,setLoading]=useState(true);
+  useEffect(()=>{
+    const fetchJobs=async()=>{
+      try {
+          const res=await axios.get(import.meta.env.VITE_BACKEND_JOBS)
+          if(res.data.length===0){
+            setError("No jobs found at the moment!!");
+          }
+          else{
+            setJobs(res.data)
+          }
+      } catch (error) {
+        setError('Something went wrong!!')
+      }
+      finally{
+        setLoading(false)
+      }
     }
-  ];
+    fetchJobs();
+  },[])
+  
 
   const filteredJobs = jobs.filter(job =>
     job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -62,12 +55,14 @@ const Jobs = ({ showSection }) => {
           <button className="search-button" onClick={handleSearch}>🔍</button>
         </div>
         
-        <div id="job-listings">
+        {
+          loading?(<p>Loading jobs...</p>):error?(<p>{error}</p>):(
+            <div id="job-listings">
           {filteredJobs.map((job) => (
             <div key={job.id} className="opportunity-card">
               <div className="opportunity-header">
                 <div className="opportunity-title">{job.title}</div>
-                <div className="opportunity-type">{job.type}</div>
+                <div className="opportunity-type">full time</div>
               </div>
               <div className="opportunity-details">
                 <span><strong>Experience:</strong> {job.experience}</span>
@@ -90,6 +85,8 @@ const Jobs = ({ showSection }) => {
             </div>
           )}
         </div>
+          )
+        }
       </div>
     </section>
   );

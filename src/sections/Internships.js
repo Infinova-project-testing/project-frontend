@@ -1,42 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Internships = ({ showSection }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  
-  const internships = [
-    {
-      id: 'web-dev',
-      title: 'Web Development Intern',
-      type: 'Remote',
-      duration: '3 months',
-      stipend: '₹15,000/month',
-      location: 'Remote/Hybrid',
-      description: 'Work on real-world web development projects using React, Node.js, and modern technologies.'
-    },
-    {
-      id: 'data-analytics',
-      title: 'Data Analytics Intern',
-      type: 'On-site',
-      duration: '4 months',
-      stipend: '₹18,000/month',
-      location: 'Mumbai',
-      description: 'Analyze large datasets and create insights using Python, SQL, and visualization tools.'
-    },
-    {
-      id: 'digital-marketing',
-      title: 'Digital Marketing Intern',
-      type: 'Hybrid',
-      duration: '2 months',
-      stipend: '₹12,000/month',
-      location: 'Pune',
-      description: 'Support marketing campaigns, content creation, and social media management.'
-    }
-  ];
+  const [searchTerm, setSearchTerm] = useState("");
+  const [internships, setInternships] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    const fetchInternships = async () => {
+      try {
+        const res = await axios.get(
+          import.meta.env.VITE_BACKEND_INTERNSHIPS
+        );
+        if (res.data.length === 0) {
+          setError("No internships found!!");
+        } else {
+          setInternships(res.data);
+        }
+      } catch (error) {
+        setError("something went wrong!!!");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchInternships();
+  }, []);
 
-  const filteredInternships = internships.filter(internship =>
-    internship.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    internship.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    internship.location.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredInternships = internships.filter(
+    (internship) =>
+      internship.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      internship.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      internship.location.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleSearch = () => {
@@ -44,7 +38,7 @@ const Internships = ({ showSection }) => {
   };
 
   const handleApply = (internshipId) => {
-    showSection('internship-form');
+    showSection("internship-form");
   };
 
   return (
@@ -59,37 +53,53 @@ const Internships = ({ showSection }) => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="search-button" onClick={handleSearch}>🔍</button>
+          <button className="search-button" onClick={handleSearch}>
+            🔍
+          </button>
         </div>
-        
-        <div id="internship-listings">
-          {filteredInternships.map((internship) => (
-            <div key={internship.id} className="opportunity-card">
-              <div className="opportunity-header">
-                <div className="opportunity-title">{internship.title}</div>
-                <div className="opportunity-type">{internship.type}</div>
+
+        {loading ? (
+          <p>Loading internships.....</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          <div id="internship-listings">
+            {filteredInternships.map((internship) => (
+              <div key={internship._id} className="opportunity-card">
+                <div className="opportunity-header">
+                  <div className="opportunity-title">{internship.title}</div>
+                  <div className="opportunity-type">
+                    {internship.internshipType}
+                  </div>
+                </div>
+                <div className="opportunity-details">
+                  <span>
+                    <strong>Duration:</strong> {internship.duration}
+                  </span>
+                  <span>
+                    <strong>Stipend:</strong> {internship.stipend}
+                  </span>
+                  <span>
+                    <strong>Location:</strong> {internship.location}
+                  </span>
+                </div>
+                <p>{internship.description}</p>
+                <button
+                  className="apply-button"
+                  onClick={() => handleApply(internship.id)}
+                >
+                  Apply Now
+                </button>
               </div>
-              <div className="opportunity-details">
-                <span><strong>Duration:</strong> {internship.duration}</span>
-                <span><strong>Stipend:</strong> {internship.stipend}</span>
-                <span><strong>Location:</strong> {internship.location}</span>
+            ))}
+
+            {filteredInternships.length === 0 && (
+              <div className="opportunity-card">
+                <p>No internships found matching your search criteria.</p>
               </div>
-              <p>{internship.description}</p>
-              <button 
-                className="apply-button" 
-                onClick={() => handleApply(internship.id)}
-              >
-                Apply Now
-              </button>
-            </div>
-          ))}
-          
-          {filteredInternships.length === 0 && (
-            <div className="opportunity-card">
-              <p>No internships found matching your search criteria.</p>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

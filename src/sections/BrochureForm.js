@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BrochureForm = ({ selectedCourse, showSection, generatedOTP, setGeneratedOTP }) => {
+const BrochureForm = ({ selectedCourse, showSection, generatedOTP, setGeneratedOTP,brochureUrl}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,7 +9,8 @@ const BrochureForm = ({ selectedCourse, showSection, generatedOTP, setGeneratedO
   });
   const [showOTPSection, setShowOTPSection] = useState(false);
   const [otpValues, setOtpValues] = useState(['', '', '', '']);
-
+  
+  
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -17,23 +18,35 @@ const BrochureForm = ({ selectedCourse, showSection, generatedOTP, setGeneratedO
     });
   };
 
-  const sendOTP = () => {
+  const sendOTP = async() => {
     const { name, email, phone, age } = formData;
-
     if (!name || !email || !phone || !age) {
       alert('Please fill all required fields');
       return;
     }
 
-    // Generate random 4-digit OTP
-    const otp = Math.floor(1000 + Math.random() * 9000).toString();
-    setGeneratedOTP(otp);
+    try {
+      const res=await fetch(import.meta.env.VITE_BACKEND_GET_OTP,{
+      method:"POST",
+      headers:{ "Content-Type": "application/json"},
+      body:JSON.stringify(formData)
+    });
+    const data=await res.json();
+  
     
-    // Simulate sending OTP
-    alert(`OTP sent to ${phone}: ${otp}`);
+    if(data.success){
+      setShowOTPSection(true);
+    }
+    else{
+      
+    }
+    } catch (error) {
+     console.log(error);
+      
+    }
     
-    // Show OTP section
-    setShowOTPSection(true);
+    
+   
   };
 
   const handleOTPChange = (index, value) => {
@@ -52,31 +65,48 @@ const BrochureForm = ({ selectedCourse, showSection, generatedOTP, setGeneratedO
     }
   };
 
-  const verifyOTP = () => {
+const brochureDownloadDetails=async()=>{
+  try {
+    const courseName=selectedCourse.name;
+    const brochureDownload=await fetch(import.meta.env.VITE_BACKEND_BROCHURE_DOWNLOAD,{
+      method:"POST",
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({...formData,course:courseName})
+    })
+    const data=await brochureDownload.json()
+   
+    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+  const verifyOTP = async() => {
     const enteredOTP = otpValues.join('');
+    
     
     if (enteredOTP.length !== 4) {
       alert('Please enter complete OTP');
       return;
     }
     
-    if (enteredOTP === generatedOTP) {
-      alert('OTP verified successfully! Downloading brochure...');
-      downloadBrochure();
-    } else {
-      alert('Invalid OTP. Please try again.');
-    }
-  };
-
-  const downloadBrochure = () => {
-    // Simulate brochure download
-    const link = document.createElement('a');
-    link.href = 'data:application/pdf;base64,JVBERi0xLjMKJcTl8uXrp/Og0MTGCjQgMCBvYmoKPDwKL1R5cGUgL0NhdGFsb2cKL091dGxpbmVzIDIgMCBSCi9QYWdlcyAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovVHlwZSAvT3V0bGluZXMKL0NvdW50';
-    link.download = `${selectedCourse}-brochure.pdf`;
-    link.click();
+    const res=await fetch(import.meta.env.VITE_BACKEND_VERIFY_OTP,{
+      method:"POST",
+      headers:{ "Content-Type": "application/json"},
+      body:JSON.stringify({...formData,enteredOtp:enteredOTP})
+    });
+    const data=await res.json();
+   
     
-    // Reset form and go back to courses
-    showSection('courses');
+    if(data.success){
+      await brochureDownloadDetails();
+      window.open(selectedCourse.brochureUrl,'_blank');
+      showSection('courses');
+      
+    }else{
+      console.log('Cannot download');
+      
+    }
   };
 
   return (
