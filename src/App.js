@@ -14,6 +14,7 @@ import JobForm from './sections/JobForm';
 import Consultants from './sections/Consultants';
 import HiringSolutions from './sections/HiringSolutions';
 import Contact from './sections/Contact';
+import AboutUs from './sections/AboutUs';
 import './styles/global.css';
 
 function App() {
@@ -95,6 +96,8 @@ function App() {
         return <HiringSolutions />;
       case 'contact':
         return <Contact />;
+      case 'aboutUs':
+        return <AboutUs showSection={showSection} />;
       default:
         return <Home showSection={showSection} />;
     }

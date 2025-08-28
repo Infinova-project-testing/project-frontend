@@ -21,23 +21,53 @@ const Footer = ({ showSection }) => {
           <div className="footer-section">
             <h1>Our Divisions</h1>
             <ul>
-              <li><a onClick={() => showSection('technologies')}>Infinova Technologies</a></li>
-              <li><a onClick={() => showSection('eduventures')}>Infinova Eduventures</a></li>
-              <li><a onClick={() => showSection('consultants')}>Infinova Consultants</a></li>
-              <li><a onClick={() => showSection('about')}>About Us</a></li>
-              <li><a onClick={() => showSection('contact')}>Contact Us</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('technologies');
+              }}>Infinova Technologies</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('eduventures');
+              }}>Infinova Eduventures</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('consultants');
+              }}>Infinova Consultants</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('aboutUs');
+              }}>About Us</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('contact');
+              }}>Contact Us</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h1>Quick Links</h1>
             <ul>
-              <li><a onClick={() => showSection('courses')}>Courses</a></li>
-              <li><a onClick={() => showSection('internships')}>Internships</a></li>
-              <li><a onClick={() => showSection('jobs')}>Job Opportunities</a></li>
-              <li><a onClick={() => showSection('hiring-solutions')}>Hiring Solutions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('courses');
+              }}>Courses</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('internships');
+              }}>Internships</a></li>
+              <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('jobs');
+              }}>Job Opportunities</a></li>
+              <li><a href='#' style={{ pointerEvents: "none", color: "gray", cursor: "not-allowed" }}
+              tabIndex={-1}
+              aria-disabled="true">Hiring Solutions</a></li>
+              <li><a href="#" style={{ pointerEvents: "none", color: "gray", cursor: "not-allowed" }}
+              tabIndex={-1}
+              aria-disabled="true">Privacy Policy</a></li>
+              <li><a href="#" style={{ pointerEvents: "none", color: "gray", cursor: "not-allowed" }}
+              tabIndex={-1}
+              aria-disabled="true">Terms of Service</a></li>
             </ul>
           </div>
           

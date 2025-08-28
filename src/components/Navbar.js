@@ -32,7 +32,7 @@ const Navbar = ({ currentSection, showSection }) => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo" onClick={() => handleNavClick('home')}>
-          InfinovaGlobal
+          <img src="./src/assets/image/global_Logo.png" width={250}/>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}` }>
           <li><a onClick={() => handleNavClick('home')}>Home</a></li>
@@ -40,6 +40,7 @@ const Navbar = ({ currentSection, showSection }) => {
           <li><a onClick={() => handleNavClick('consultants')}>Consultants</a></li>
           <li><a onClick={() => handleNavClick('technologies')}>Technologies</a></li>
           <li><a onClick={() => handleNavClick('contact')}>Contact</a></li>
+          <li><a onClick={() => handleNavClick('aboutUs')}>About Us</a></li>
         </ul>
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
