@@ -630,6 +630,7 @@ body {
   .cards-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    min-height: 300px;
   }
 
   .card {

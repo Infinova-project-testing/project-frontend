@@ -35,12 +35,30 @@ const Navbar = ({ currentSection, showSection }) => {
           <img src="./src/assets/image/global_Logo.png" width={250}/>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}` }>
-          <li><a onClick={() => handleNavClick('home')}>Home</a></li>
-          <li><a onClick={() => handleNavClick('eduventures')}>Eduventures</a></li>
-          <li><a onClick={() => handleNavClick('consultants')}>Consultants</a></li>
-          <li><a onClick={() => handleNavClick('technologies')}>Technologies</a></li>
-          <li><a onClick={() => handleNavClick('contact')}>Contact</a></li>
-          <li><a onClick={() => handleNavClick('aboutUs')}>About Us</a></li>
+          <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('home');
+              }}>Home</a></li>
+          <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('eduventures');
+              }}>Eduventures</a></li>
+          <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('consultants');
+              }}>Consultants</a></li>
+          <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('technologies');
+              }}>Technologies</a></li>
+          <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('contact');
+              }}>Contact</a></li>
+          <li><a onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                 showSection('aboutUs');
+              }}>About Us</a></li>
         </ul>
         <div className="hamburger" onClick={toggleMenu}>
           <span></span>
