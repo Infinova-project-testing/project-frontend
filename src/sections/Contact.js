@@ -37,7 +37,7 @@ const Contact = () => {
       
       
       if(res.ok){
-          alert('Thank you for your message! We will get back to you within 24 hours.');
+          alert('Message sent successfully!!');
     
     // Reset form
     setFormData({
