@@ -32,7 +32,7 @@ const Navbar = ({ currentSection, showSection }) => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo" onClick={() => handleNavClick('home')}>
-          <img src="./src/assets/image/global_Logo.png" width={250}/>
+          <img src="./assets/image/global_Logo.png" width={250}/>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}` }>
           <li><a onClick={() => {
