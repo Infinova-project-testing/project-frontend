@@ -5,7 +5,7 @@ const About = ({ showSection }) => {
     <section className="section">
       <div className="container">
         <h2 className="section-title">Our Divisions</h2>
-        <div className="cards-grid" style={{display:"flex",justifyContent:"cenetr"}}>
+        <div className="cards-grid" style={{display:"flex",justifyContent:"center"}}>
 
           <div className="card" style={{maxWidth:"20rem"}}>
             <div className="card-icon"><img src="./assets/image/edu.png" alt="" width={90} /></div>
