@@ -10,11 +10,11 @@ const Footer = ({ showSection }) => {
             <p> <h2>Your Growth, Our Mission</h2></p>
             <p>Our mission is to empower individuals and organizations by delivering transformative education, innovative technology, and impactful consulting solutions that drive sustainable growth and real-world success.</p>
             <div className="social-links">
-              <a href="#" title="Facebook"><img src="./src/assets/image/facebook.png" alt="" width={40} /></a>
-              <a href="#" title="Twitter"><img src="./src/assets/image/twitter.png" alt="" width={40} /></a>
-              <a href="#" title="LinkedIn"><img src="./src/assets/image/linkedin.png" alt="" width={40} /></a>
-              <a href="#" title="Instagram"><img src="./src/assets/image/instagram.png" alt="" width={40} /></a>
-              <a href="#" title="YouTube"><img src="./src/assets/image/youtube.png" alt="" width={40} /></a>
+              <a href="#" title="Facebook"><img src="/assets/image/facebook.png" alt="" width={40} /></a>
+              <a href="#" title="Twitter"><img src="/assets/image/twitter.png" alt="" width={40} /></a>
+              <a href="#" title="LinkedIn"><img src="/assets/image/linkedin.png" alt="" width={40} /></a>
+              <a href="#" title="Instagram"><img src="/assets/image/instagram.png" alt="" width={40} /></a>
+              <a href="#" title="YouTube"><img src="/assets/image/youtube.png" alt="" width={40} /></a>
             </div>
           </div>
           
