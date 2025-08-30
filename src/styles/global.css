@@ -1415,3 +1415,9 @@ body {
     align-items: center;
   }
 }
+.eduventures-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
