@@ -63,9 +63,9 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
             <p>{error}</p>
           </div>
         ) : (
-          <div className="cards-grid" style={{display:"flex" ,maxWidth:"25rem"}}>
+          <div className="cards-grid" style={{display:"flex"}}>
             {courses.map((data, index) => (
-              <div key={index} className="card">
+              <div key={index} className="card" style={{maxWidth:"20rem"}}>
                 <div className="card-icon">
                   <img src={data.courseImageUrl} alt={data.name} />
                 </div>

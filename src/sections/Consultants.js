@@ -5,8 +5,8 @@ const Consultants = ({ showSection, showBrochureForm }) => {
     <section className="section active">
       <div className="container">
         <h2 className="section-title">Infinova Consultants</h2>
-        <div className="cards-grid" style={{display:"flex",justifyContent:"center"}}>
-          <div className="card" style={{maxWidth:"25rem"}}>
+        <div className="cards-grid" style={{display:"flex",justifyContent:"cenetr"}}>
+          <div className="card" style={{maxWidth:"20rem"}}>
             <div className="card-icon"><img src="./assets/image/corporate.png" alt="" width={90} /></div>
             <h3>Corporate Training</h3>
             <p>Customized training programs for organizations to upskill their workforce in latest technologies.</p>
@@ -20,7 +20,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               Coming Soon!!
             </button>
           </div>
-          <div className="card" style={{maxWidth:"25rem"}}>
+          <div className="card" style={{maxWidth:"20rem"}}>
             <div className="card-icon"><img src="./assets/image/outbound.png" alt="" width={90} /></div>
             <h3>Outbound Training</h3>
             <p>Team building activities, leadership development, and outdoor training programs.</p>
@@ -34,7 +34,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               Coming Soon!!
             </button>
           </div>
-          <div className="card" style={{maxWidth:"25rem"}}>
+          <div className="card" style={{maxWidth:"20rem"}}>
             <div className="card-icon"><img src="./assets/image/hiring.png" alt="" width={90} /></div>
             <h3>Hiring Solutions</h3>
             <p>End-to-end recruitment services to help organizations find the right talent efficiently.</p>
@@ -52,7 +52,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
 
         <h3 className="text-center mb-40" style={{ marginTop: '60px' }}>Our Corporate Training Courses</h3>
         <div className="cards-grid" style={{display:"flex",justifyContent:"center"}}>
-          <div className="card" style={{maxWidth:"25rem"}}>
+          <div className="card" style={{maxWidth:"20rem"}}>
             <h3>Leadership Development</h3>
             <p>Transform managers into effective leaders with our comprehensive leadership training program.</p>
             <button 
@@ -65,7 +65,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               Coming Soon!!
             </button>
           </div>
-          <div className="card" style={{maxWidth:"25rem"}}>
+          <div className="card" style={{maxWidth:"20rem"}}>
             <h3>Digital Transformation</h3>
             <p>Help your organization adapt to digital age with our technology adoption training.</p>
             <button 
@@ -78,7 +78,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               Coming Soon!!
             </button>
           </div>
-          <div className="card" style={{maxWidth:"25rem"}}>
+          <div className="card" style={{maxWidth:"20rem"}}>
             <h3>Communication Skills</h3>
             <p>Enhance team communication and collaboration with our professional communication training.</p>
             <button 
