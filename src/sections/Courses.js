@@ -73,10 +73,10 @@ const Courses = ({ showBrochureForm }) => {
         <h2 className="section-title">Our Courses</h2>
         {
           loading?(<p style={{marginTop:"500px"}}>Loading courses....</p>):error?(<p style={{marginTop:"500px"}}>{error}</p>):(
-              <div className="cards-grid">
+              <div className="cards-grid" style={{display:"flex",justifyContent:"cenetr"}}>
           {
             courses.map((data)=>(
-                 <div className="card" style={{maxWidth:"25rem"}}>
+                 <div className="card" style={{maxWidth:"20rem"}}>
             <h3>{data.name}</h3>
             <p>Duration:{data.duration}| Mode:Hybrid</p>
             <p>{data.details}</p>
