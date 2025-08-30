@@ -5,7 +5,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
     <section className="section active">
       <div className="container">
         <h2 className="section-title">Infinova Consultants</h2>
-        <div className="cards-grid">
+        <div className="cards-grid" style={{display:"flex"}}>
           <div className="card">
             <div className="card-icon"><img src="./assets/image/corporate.png" alt="" width={90} /></div>
             <h3>Corporate Training</h3>

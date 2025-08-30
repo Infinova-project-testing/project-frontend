@@ -63,7 +63,7 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
             <p>{error}</p>
           </div>
         ) : (
-          <div className="cards-grid">
+          <div className="cards-grid" style={{display:"flex" ,maxWidth:"25rem"}}>
             {courses.map((data, index) => (
               <div key={index} className="card">
                 <div className="card-icon">
