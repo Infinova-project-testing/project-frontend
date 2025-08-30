@@ -1415,16 +1415,8 @@ body {
     align-items: center;
   }
 }
-<<<<<<< HEAD
 .cards-grid{
   display: flex;
   flex-wrap:wrap;
   
-=======
-.eduventures-buttons{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
->>>>>>> a8db8a12084546ee6210470b8085610de05d4f79
 }

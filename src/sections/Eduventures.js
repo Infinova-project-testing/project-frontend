@@ -52,29 +52,11 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
             Explore Jobs
           </a>
         </div>
-<<<<<<< HEAD
-        <div className="cards-grid" style={{display:"flex",justifyContent:"center"}}>
-         {
-          loading?(<p>Loading courses</p>):error?(<p>{error.message}</p>):(
-             courses.map((data)=>(
-              <div className="card" style={{maxWidth:"25rem"}}>
-            <div className="card-icon"><img src={data.courseImageUrl} alt="" style={{width:"90px"}} /></div>
-            <h3>{data.name}</h3>
-            <p>{data.details}</p>
-            <a 
-              href="#" 
-              className="card-button" 
-              onClick={(e) => {e.preventDefault(); showBrochureForm(data);}}
-            >
-              Get Brochure
-            </a>
-=======
         
         {loading ? (
           <div className="loading-container text-center">
             <div className="loader"></div>
             <p>Loading courses...</p>
->>>>>>> a8db8a12084546ee6210470b8085610de05d4f79
           </div>
         ) : error ? (
           <div className="error-container text-center">
