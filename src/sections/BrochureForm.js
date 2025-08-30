@@ -96,8 +96,8 @@ const brochureDownloadDetails=async()=>{
       body:JSON.stringify({...formData,enteredOtp:enteredOTP})
     });
     const data=await res.json();
-   
-    
+   console.log(data.message);
+
     if(data.success){
       await brochureDownloadDetails();
       window.open(selectedCourse.brochureUrl,'_blank');

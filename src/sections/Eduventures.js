@@ -56,7 +56,7 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
           loading?(<p>Loading courses</p>):error?(<p>{error.message}</p>):(
              courses.map((data)=>(
               <div className="card" style={{maxWidth:"25rem"}}>
-            <div className="card-icon"><img src={data.courseImageUrl} alt="" width={90} /></div>
+            <div className="card-icon"><img src={data.courseImageUrl} alt="" style={{width:"90px"}} /></div>
             <h3>{data.name}</h3>
             <p>{data.details}</p>
             <a 

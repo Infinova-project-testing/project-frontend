@@ -73,10 +73,10 @@ const Footer = ({ showSection }) => {
           
           <div className="footer-section right-align">
             <h1>Contact Info</h1>
-            <p><img src="./src/assets/image/map_12690830.png" alt="" width={20} /> 123 Innovation Street<br />Tech Park, Mumbai - 400001</p>
-            <p><img src="./src/assets/image/telephone_1321655.png" alt="" width={20} /> +91 98765 43210</p>
-            <p><img src="./src/assets/image/messages_1683541.png" alt="" width={20} /> info@infinova.org</p>
-            <p><img src="./src/assets/image/internet_364089.png" alt="" width={20} /> www.infinova.org</p>
+            <p><img src="/assets/image/map_12690830.png" alt="" width={20} /> 123 Innovation Street<br />Tech Park, Mumbai - 400001</p>
+            <p><img src="/assets/image/telephone_1321655.png" alt="" width={20} /> +91 98765 43210</p>
+            <p><img src="/assets/image/messages_1683541.png" alt="" width={20} /> info@infinova.org</p>
+            <p><img src="/assets/image/internet_364089.png" alt="" width={20} /> www.infinova.org</p>
           </div>
         </div>
         
