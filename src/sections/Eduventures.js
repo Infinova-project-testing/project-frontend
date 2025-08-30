@@ -67,7 +67,7 @@ const Eduventures = ({ showSection, showBrochureForm }) => {
             {courses.map((data, index) => (
               <div key={index} className="card" style={{maxWidth:"20rem"}}>
                 <div className="card-icon">
-                  <img src={data.courseImageUrl} alt={data.name} />
+                  <img src={data.courseImageUrl} alt={data.name} width={90}/>
                 </div>
                 <h3>{data.name}</h3>
                 <p>{data.details}</p>

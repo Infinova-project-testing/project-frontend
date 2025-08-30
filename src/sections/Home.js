@@ -19,18 +19,18 @@ const Home = ({ showSection }) => {
       <section className="home-divisions">
         <div className="container">
           <h2 className="section-title">Explore Our Divisions</h2>
-          <div className="cards-grid">
-            <div className="card">
+          <div className="cards-grid" style={{display:"flex",justifyContent:"center"}}>
+            <div className="card" style={{maxWidth:"20rem"}}>
               <div className="card-icon"><img src="./assets/image/edu.png" alt="" width={90} /></div>
               <h3>Infinova Eduventures</h3>
               <p>Professional courses, internships, and educational programs designed to advance your career in technology and business.</p>
             </div>
-            <div className="card">
+            <div className="card" style={{maxWidth:"20rem"}}>
               <div className="card-icon"><img src="./assets/image/const.png" alt="" width={90} /></div>
               <h3>Infinova Consultants</h3>
               <p>Corporate training, outbound programs, and hiring solutions to transform your organization's capabilities.</p>
             </div>
-            <div className="card">
+            <div className="card" style={{maxWidth:"20rem"}}>
               <div className="card-icon"><img src="./assets/image/tech.png" alt="" width={90} /></div>
               <h3>Infinova Technologies</h3>
               <p>Cutting-edge technology solutions including 3D printing and innovative development services.</p>
