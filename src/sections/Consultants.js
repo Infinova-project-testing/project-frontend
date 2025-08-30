@@ -86,7 +86,7 @@ const Consultants = ({ showSection, showBrochureForm }) => {
               className="card-button" 
               onClick={(e) => {e.preventDefault(); showBrochureForm('communication');}}
               style={{cursor:"not-allowed"}}
-              disabled
+              
             >
               Coming Soon!!
             </button>
