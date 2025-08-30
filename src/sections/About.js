@@ -8,7 +8,7 @@ const About = ({ showSection }) => {
         <div className="cards-grid">
 
           <div className="card">
-            <div className="card-icon"><img src="./src/assets/image/edu.png" alt="" width={90} /></div>
+            <div className="card-icon"><img src="./assets/image/edu.png" alt="" width={90} /></div>
             <h3>Infinova Eduventures</h3>
             <p>Comprehensive educational programs, courses, internships, and career opportunities.</p>
             <button className="card-button" onClick={() => showSection('eduventures')}>
@@ -17,7 +17,7 @@ const About = ({ showSection }) => {
           </div>
 
           <div className="card">
-            <div className="card-icon"><img src="./src/assets/image/const.png" alt="" width={90} /></div>
+            <div className="card-icon"><img src="./assets/image/const.png" alt="" width={90} /></div>
             <h3>Infinova Consultants</h3>
             <p>Professional consulting services, corporate training, and comprehensive hiring solutions.</p>
             <button className="card-button" onClick={() => showSection('consultants')}>
@@ -26,7 +26,7 @@ const About = ({ showSection }) => {
           </div>
 
           <div className="card">
-            <div className="card-icon"><img src="./src/assets/image/tech.png" alt="" width={90} /></div>
+            <div className="card-icon"><img src="./assets/image/tech.png" alt="" width={90} /></div>
             <h3>Infinova Technologies</h3>
             <p>Cutting-edge technology solutions including 3D printing and emerging technologies for the future.</p>
             <button disabled className="card-button" onClick={() => showSection('technologies')}>
