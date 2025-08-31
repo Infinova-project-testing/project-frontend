@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from 'axios';
 const BrochureForm = ({ selectedCourse, showSection }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -96,6 +96,13 @@ const BrochureForm = ({ selectedCourse, showSection }) => {
     const data = await res.json();
 
     if (data.success) {
+      const res=await fetch(import.meta.env.VITE_BACKEND_BROCHURE_DOWNLOAD,{
+        method:"POST",
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({...formData,course:selectedCourse.name})
+      })
+      
+      
       window.open(selectedCourse.brochureUrl, '_blank');
       showSection('courses');
     } else {
